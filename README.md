@@ -1,4 +1,6 @@
 Image and Raster Interaction Web App
+
+
 This web application allows users to interact with a static image overlayed with a raster grid. The grid's cells are displayed in a list view, where each cell can be toggled visible or hidden on the image. Users can also change the number of rows and columns of the raster grid.
 
 Features
@@ -24,10 +26,12 @@ Grid.tsx: Displays the grid overlay on the image, updating the visibility of eac
 CellList.tsx: Displays the list of cells with the visibility toggle controls.
 GridSettings.tsx: Allows the user to adjust the number of rows and columns for the grid.
 GridDetails.tsx: Displays the header or title section of the app.
+
 Interaction
 Adjust Grid Size: The user can input the number of rows and columns for the raster grid. The grid will automatically adjust.
 Toggle Cell Visibility: The user can toggle visibility of each individual cell from the list view by clicking the eye icon.
 Hover to Highlight: Hovering over a cell name in the list will highlight the corresponding grid cell on the image.
+
 Usage
 Once the app is running, follow these steps to interact with it:
 
