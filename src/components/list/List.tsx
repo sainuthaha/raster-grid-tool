@@ -1,7 +1,6 @@
 import { VisibilityOffOutlined } from "@mui/icons-material";
 import { Cell } from "../../models/Cell";
 import VisibilityIcon from "@mui/icons-material/Visibility";
-import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 
 export const CellList: React.FC<{
   cells: Cell[];

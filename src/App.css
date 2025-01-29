@@ -1,0 +1,32 @@
+/* Center everything in the app */
+.app-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Container for the grid and list */
+.grid-list-container {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  justify-content: center;
+  width: 100%;
+}
+
+/* List container */
+.list-container {
+  flex: 1;
+  max-height: var(--grid-height);
+  overflow-y: auto;
+  border: 2px solid black;
+  min-width: 250px;
+}
+
+/* Grid container */
+.grid-container {
+  flex: 1;
+  height: var(--grid-height);
+  min-width: 250px;
+}

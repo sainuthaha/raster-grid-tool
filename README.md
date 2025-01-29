@@ -1,50 +1,44 @@
-# React + TypeScript + Vite
+Image and Raster Interaction Web App
+This web application allows users to interact with a static image overlayed with a raster grid. The grid's cells are displayed in a list view, where each cell can be toggled visible or hidden on the image. Users can also change the number of rows and columns of the raster grid.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Features
+Static Image Display: Displays a predefined static image.
+Dynamic Raster Grid: Grid size (rows and columns) is adjustable by the user.
+Cell List View: List of grid cells with visibility control (toggle visibility using eye icons).
+Hover to Highlight: Hovering over a cell name in the list highlights the corresponding cell on the image.
+Click to Toggle Visibility: Clicking on a cell name toggles its visibility on the image.
+Responsive Layout: The app layout is designed for desktop view.
+Tech Stack
+Frontend: React, TypeScript
+State Management: React useState hook
+Styling: Inline CSS (or can be replaced with a CSS framework)
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+How It Works
+App Structure
+The app consists of the following components:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+App.tsx: Main component that manages the state of rows, columns, and cell visibility.
+Grid.tsx: Displays the grid overlay on the image, updating the visibility of each cell.
+CellList.tsx: Displays the list of cells with the visibility toggle controls.
+GridSettings.tsx: Allows the user to adjust the number of rows and columns for the grid.
+GridDetails.tsx: Displays the header or title section of the app.
+Interaction
+Adjust Grid Size: The user can input the number of rows and columns for the raster grid. The grid will automatically adjust.
+Toggle Cell Visibility: The user can toggle visibility of each individual cell from the list view by clicking the eye icon.
+Hover to Highlight: Hovering over a cell name in the list will highlight the corresponding grid cell on the image.
+Usage
+Once the app is running, follow these steps to interact with it:
 
-- Configure the top-level `parserOptions` property like this:
+Adjust Grid Size: Enter the desired number of rows and columns in the input fields.
+Toggle Visibility: Click the eye icon next to each cell name in the list view to toggle its visibility on the image.
+Hover Highlight: Hover over any cell name in the list to highlight the corresponding cell on the image.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+Future Enhancements
+Add responsive design for mobile/tablet support.
+Add functionality to upload custom images for display.
+Implement more advanced grid interaction features such as drawing, annotations, or exporting the grid.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+![alt text](image.png)

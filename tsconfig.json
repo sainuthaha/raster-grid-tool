@@ -1,7 +1,18 @@
 {
-  "files": [],
+
+  "include": [
+    "src/**/*",
+    "node_modules/@types/jest"
+  ],
   "references": [
     { "path": "./tsconfig.app.json" },
     { "path": "./tsconfig.node.json" }
-  ]
+  ],
+  
+  "compilerOptions": {
+    "jsx": "react-jsx",
+     "types": ["react", "react-dom"]
+  }
+
+
 }
