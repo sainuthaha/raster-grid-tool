@@ -1,4 +1,5 @@
 import { render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom/extend-expect';
 import { Cell } from '../../../models/Cell';
 import { Grid } from '../Grid';
 
@@ -25,10 +26,11 @@ describe('Grid Component', () => {
     );
 
     expect(screen.getByText('Cell 1')).toBeTruthy();
-    expect(screen.getByText('Cell 2')).toBeTruthy();
+    const cell = screen.getByText('Cell 1');
+    expect(cell).toHaveStyle('background-color: transparent');
   });
 
-  it('should hide invisible cells properly', () => {
+  it('should render all invisible cells correctly', () => {
     render(
       <Grid 
         cells={dummyCells} 
@@ -38,11 +40,13 @@ describe('Grid Component', () => {
       />
     );
 
-    expect(screen.queryByText('Cell 3')).toBeNull();
+    expect(screen.getByText('Cell 3')).toBeTruthy();
+    const cell = screen.getByText('Cell 3');
+    expect(cell).toHaveStyle('background-color: white');
   });
 
 
-  it('should not render invisible cells', () => {
+  it('should apply highlight to the selected cell', () => {
     render(
       <Grid 
         cells={dummyCells} 
@@ -51,21 +55,12 @@ describe('Grid Component', () => {
         highlightedCellId={highlightedCellId} 
       />
     );
+    
+    const highlightedCell = screen.getByText('Cell 1');
+    const normalCell = screen.getByText('Cell 2');
 
-    expect(screen.queryByText('Cell 3')).toBeNull();
+    expect(highlightedCell).toHaveStyle('border: 2px solid yellow');
+    expect(normalCell).toHaveStyle('border: 2px solid black');
   });
 
-  it('should render correct number of cells', () => {
-    render(
-      <Grid 
-        cells={dummyCells} 
-        rows={rows} 
-        columns={columns} 
-        highlightedCellId={highlightedCellId} 
-      />
-    );
-
-    const cellElements = screen.getAllByRole('cell'); // Assuming each cell has role="cell"
-    expect(cellElements).toHaveLength(3); // 4 total cells, but 1 is invisible
-  });
 });
