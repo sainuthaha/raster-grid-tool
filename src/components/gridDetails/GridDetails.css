@@ -1,0 +1,25 @@
+.grid-details-container {
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+.grid-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.grid-subtitle {
+  font-size: 14px;
+  color: #666;
+}
+
+.divider {
+  width: 80%;
+  margin: 10px auto;
+  border: 0;
+  height: 1px;
+  background-color: #ccc;
+}
